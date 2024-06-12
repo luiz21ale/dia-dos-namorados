@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I LOVE YOU</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <form>
+        <div class="wrapper">
+            <input type="checkbox" id="ck1" onClick="check()"/>
+            <label for="ck1">I</label>
+            <input type="checkbox" id="ck2" onClick="check()"/>
+            <label for="ck2">love</label>
+            <input type="checkbox" id="ck3" onClick="check()"/>
+            <label for="ck3">you</label>
+            <span>(Clique nas palavras, meu amor)</span>
+        </div>
+    </form>
+
+    <script>
+        function check() {
+            // Verifica se todos os três elementos do formulário estão marcados
+            if (
+                document.forms[0].elements[0].checked == true &&
+                document.forms[0].elements[1].checked == true &&
+                document.forms[0].elements[2].checked == true
+            ) {
+                // Adiciona a classe 'throb' se não estiver presente
+                if (!$('.wrapper').hasClass('throb')) {
+                    // Faz coisas ao fechar a navegação
+                    $('.wrapper').addClass('throb');
+                }
+            } else {
+                // Remove a classe 'throb' se estiver presente
+                if ($('.wrapper').hasClass('throb')) {
+                    // Faz coisas ao fechar a navegação
+                    $('.wrapper').removeClass('throb');
+                }
+            }
+        }
+    </script>
+</body>
+</html>
